@@ -1,151 +1,251 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kaushal Ramajayam | Digital Marketing Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
-    body { background: #0f172a; color: #e5e7eb; line-height: 1.6; }
-    a { color: #38bdf8; text-decoration: none; }
-
-    header {
-      background: linear-gradient(135deg, #020617, #020617);
-      padding: 80px 20px;
-      text-align: center;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
-    header h1 { font-size: 42px; margin-bottom: 10px; }
-    header p { font-size: 18px; color: #94a3b8; }
 
+    body {
+      background: radial-gradient(circle at top, #0f172a, #020617 60%);
+      color: #f8fafc;
+    }
+
+    /* HERO */
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 60px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #38bdf8, #c084fc, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 6s infinite linear;
+    }
+
+    header p {
+      font-size: 22px;
+      color: #cbd5f5;
+      margin: 20px 0 40px;
+    }
+
+    .btn {
+      padding: 16px 42px;
+      background: linear-gradient(135deg, #38bdf8, #c084fc);
+      color: #020617;
+      border-radius: 50px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 25px 60px rgba(192,132,252,0.45);
+      transition: all 0.4s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 40px 90px rgba(250,204,21,0.4);
+    }
+
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
-      background: #020617;
-      padding: 15px;
+      background: rgba(2,6,23,0.75);
+      backdrop-filter: blur(14px);
+      padding: 18px;
       text-align: center;
       z-index: 100;
     }
-    nav a { margin: 0 15px; font-weight: bold; }
 
+    nav a {
+      margin: 0 22px;
+      color: #f8fafc;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8, #facc15);
+      left: 0;
+      bottom: -6px;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    /* SECTIONS */
     section {
-      padding: 70px 20px;
-      max-width: 1000px;
+      padding: 120px 20px;
+      max-width: 1200px;
       margin: auto;
     }
+
     section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      border-left: 5px solid #38bdf8;
-      padding-left: 15px;
+      font-size: 42px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 700;
     }
 
+    /* GRID & CARDS */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
     }
 
     .card {
-      background: #020617;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background: linear-gradient(160deg, rgba(15,23,42,0.9), rgba(2,6,23,0.9));
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card h3 { margin-bottom: 10px; color: #38bdf8; }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(250,204,21,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
 
-    footer {
+    .card:hover::before { opacity: 1; }
+
+    .card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 50px 120px rgba(56,189,248,0.25);
+    }
+
+    .card h3 {
+      color: #facc15;
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+    .contact-card {
       text-align: center;
-      padding: 30px;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 50px;
+      text-align: center;
       background: #020617;
       color: #94a3b8;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: #020617;
-      border-radius: 30px;
-      font-weight: bold;
+    /* ANIMATIONS */
+    @keyframes gradientMove {
+      from { background-position: 0%; }
+      to { background-position: 200%; }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 42px; }
+      header p { font-size: 18px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <header>
-    <h1>Kaushal Ramajayam</h1>
-    <p>Digital Marketing & System Analysis Enthusiast</p>
-    <a class="btn" href="#contact">Contact Me</a>
+    <div>
+      <h1>Kaushal Ramajayam</h1>
+      <p>Digital Marketing · Strategy · Brand Growth</p>
+      <a href="#contact" class="btn">Build With Me</a>
+    </div>
   </header>
 
+  <!-- NAV -->
   <nav>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
+    <a href="#skills">Expertise</a>
+    <a href="#projects">Work</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      I am a passionate Digital Marketing professional with experience in social media marketing, campaign planning, and digital promotions. I enjoy blending creativity with data-driven strategies to help brands grow online.
+    <p style="text-align:center; max-width:850px; margin:auto; color:#e5e7eb; font-size:18px;">
+      I craft bold digital experiences and marketing strategies that connect brands with people. My work blends creativity, analytics, and luxury-level presentation to deliver measurable impact.
     </p>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Expertise</h2>
     <div class="grid">
-      <div class="card">Social Media Marketing</div>
-      <div class="card">Content Creation & Copywriting</div>
-      <div class="card">Instagram & Facebook Ads</div>
-      <div class="card">SEO Basics</div>
-      <div class="card">Analytics & Insights</div>
-      <div class="card">Website Planning & UX</div>
+      <div class="card">High-Impact Social Media Campaigns</div>
+      <div class="card">Luxury Brand Positioning</div>
+      <div class="card">Instagram & Meta Advertising</div>
+      <div class="card">SEO & Performance Tracking</div>
+      <div class="card">Content Strategy & Copywriting</div>
+      <div class="card">Website & Funnel Planning</div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Selected Work</h2>
     <div class="grid">
       <div class="card">
-        <h3>ICBT Prom Night – Digital Campaign</h3>
-        <p>Planned and executed Instagram promotions, urgency campaigns, and ticket sale announcements.</p>
+        <h3>ICBT Prom Night</h3>
+        <p>Designed and executed high-engagement Instagram campaigns with urgency-based storytelling.</p>
       </div>
       <div class="card">
-        <h3>The Gallery Café – Website & Promotions</h3>
-        <p>Contributed to website planning, digital promotions, and customer engagement strategies.</p>
+        <h3>The Gallery Café</h3>
+        <p>Digital planning, promotions, and brand-focused customer engagement strategies.</p>
       </div>
       <div class="card">
-        <h3>Gym Management System – Concept</h3>
-        <p>Developed a digital concept combining fitness, wellness tracking, and marketing strategy.</p>
+        <h3>Gym Management Concept</h3>
+        <p>Developed a premium digital ecosystem combining wellness, data, and automation.</p>
       </div>
     </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience & Education</h2>
-    <div class="card">
-      <p><strong>SLIM / CIM Qualified</strong></p>
-      <p>Hands-on experience in event marketing, social media management, and digital strategy planning.</p>
-    </div>
-  </section>
-
+  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: kaushalramajayam@gmail.com</p>
-      <p>Phone: 0770269512</p>
-      <p>LinkedIn: linkedin.com/in/kaushal-ramajayam-6008772a0/</p>
+    <h2>Let’s Connect</h2>
+    <div class="card contact-card">
+      <p>📧 kaushalramajayam@gmail.com</p>
+      <p>📞 0770269512</p>
+      <p>🔗 linkedin.com/in/kaushal-ramajayam-6008772a0</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Kaushal Ramajayam | Digital Marketing Portfolio</p>
+    © 2025 Kaushal Ramajayam · Digital Marketing Portfolio
   </footer>
 
 </body>
 </html>
+
