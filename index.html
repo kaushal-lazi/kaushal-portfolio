@@ -99,22 +99,143 @@ canvas { margin-top: 20px; }
 </section>
 <footer>© 2025 Kaushal Ramajayam · Digital Marketing Portfolio</footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<section id="analytics">
+  <h2>Campaign Analytics & Project Growth</h2>
+  <div style="max-width:850px; margin:auto;">
+
+    <!-- Overall Analytics -->
+    <h3 style="text-align:center; margin-bottom:20px;">Overall Metrics</h3>
+    <canvas id="barChart" style="margin-bottom:40px;"></canvas>
+    <canvas id="lineChart" style="margin-bottom:40px;"></canvas>
+    <canvas id="pieChart" style="margin-bottom:60px;"></canvas>
+
+    <!-- Individual Project Growth -->
+    <h3 style="text-align:center; margin-bottom:20px;">Project Growth</h3>
+    <div class="grid" style="gap:40px;">
+      <div class="card">
+        <h4>ICBT Prom Night</h4>
+        <canvas id="chartPromNight" style="height:150px;"></canvas>
+      </div>
+      <div class="card">
+        <h4>The Gallery Café</h4>
+        <canvas id="chartGalleryCafe" style="height:150px;"></canvas>
+      </div>
+      <div class="card">
+        <h4>Gym Management Concept</h4>
+        <canvas id="chartGym" style="height:150px;"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 // Overall Analytics Charts
 const barCtx = document.getElementById('barChart').getContext('2d');
-new Chart(barCtx,{type:'bar',data:{labels:['Followers','Reach','Engagement','CTR','Conversions'],datasets:[{label:'Metrics',data:[85,70,60,2.8,40],backgroundColor:['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'],borderRadius:10}]},options:{responsive:true,plugins:{legend:{display:false}}}});
-const lineCtx = document.getElementById('lineChart').getContext('2d');
-new Chart(lineCtx,{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May'],datasets:[{label:'Follower Growth',data:[10,30,45,60,85],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.2)',tension:0.4,fill:true,pointRadius:6,pointHoverRadius:10}]} ,options:{responsive:true}});
-const pieCtx = document.getElementById('pieChart').getContext('2d');
-new Chart(pieCtx,{type:'pie',data:{labels:['Instagram','Facebook','Website','Email'],datasets:[{data:[45,25,20,10],backgroundColor:['#38bdf8','#c084fc','#facc15','#0ea5e9']}]} ,options:{responsive:true}});
+new Chart(barCtx, {
+  type:'bar',
+  data:{
+    labels:['Followers','Reach','Engagement','CTR','Conversions'],
+    datasets:[{
+      label:'Metrics',
+      data:[85,70,60,2.8,40],
+      backgroundColor:['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'],
+      borderRadius:10
+    }]
+  },
+  options:{ responsive:true, plugins:{legend:{display:false}} }
+});
 
-// Individual Project Charts
+const lineCtx = document.getElementById('lineChart').getContext('2d');
+new Chart(lineCtx,{
+  type:'line',
+  data:{
+    labels:['Jan','Feb','Mar','Apr','May'],
+    datasets:[{
+      label:'Follower Growth',
+      data:[10,30,45,60,85],
+      borderColor:'#38bdf8',
+      backgroundColor:'rgba(56,189,248,0.2)',
+      tension:0.4,
+      fill:true,
+      pointRadius:6,
+      pointHoverRadius:10
+    }]
+  },
+  options:{ responsive:true }
+});
+
+const pieCtx = document.getElementById('pieChart').getContext('2d');
+new Chart(pieCtx,{
+  type:'pie',
+  data:{
+    labels:['Instagram','Facebook','Website','Email'],
+    datasets:[{
+      data:[45,25,20,10],
+      backgroundColor:['#38bdf8','#c084fc','#facc15','#0ea5e9']
+    }]
+  },
+  options:{ responsive:true }
+});
+
+// Individual Project Growth Charts
 const promCtx = document.getElementById('chartPromNight').getContext('2d');
-new Chart(promCtx,{type:'line',data:{labels:['Week1','Week2','Week3','Week4'],datasets:[{label:'Engagement Growth',data:[20,35,50,85],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.3)',fill:true,tension:0.4,pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+new Chart(promCtx,{
+  type:'line',
+  data:{
+    labels:['Week1','Week2','Week3','Week4'],
+    datasets:[{
+      label:'Engagement Growth',
+      data:[20,35,50,85],
+      borderColor:'#38bdf8',
+      backgroundColor:'rgba(56,189,248,0.3)',
+      fill:true,
+      tension:0.4,
+      pointRadius:5,
+      pointHoverRadius:8
+    }]
+  },
+  options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+});
+
 const cafeCtx = document.getElementById('chartGalleryCafe').getContext('2d');
-new Chart(cafeCtx,{type:'line',data:{labels:['Week1','Week2','Week3','Week4'],datasets:[{label:'Reach Growth',data:[15,25,40,70],borderColor:'#c084fc',backgroundColor:'rgba(192,132,252,0.3)',fill:true,tension:0.4,pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+new Chart(cafeCtx,{
+  type:'line',
+  data:{
+    labels:['Week1','Week2','Week3','Week4'],
+    datasets:[{
+      label:'Reach Growth',
+      data:[15,25,40,70],
+      borderColor:'#c084fc',
+      backgroundColor:'rgba(192,132,252,0.3)',
+      fill:true,
+      tension:0.4,
+      pointRadius:5,
+      pointHoverRadius:8
+    }]
+  },
+  options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+});
+
 const gymCtx = document.getElementById('chartGym').getContext('2d');
-new Chart(gymCtx,{type:'line',data:{labels:['Week1','Week2','Week3','Week4'],datasets:[{label:'Subscription Growth',data:[10,25,40,60],borderColor:'#facc15',backgroundColor:'rgba(250,204,21,0.3)',fill:true,tension:0.4,pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+new Chart(gymCtx,{
+  type:'line',
+  data:{
+    labels:['Week1','Week2','Week3','Week4'],
+    datasets:[{
+      label:'Subscription Growth',
+      data:[10,25,40,60],
+      borderColor:'#facc15',
+      backgroundColor:'rgba(250,204,21,0.3)',
+      fill:true,
+      tension:0.4,
+      pointRadius:5,
+      pointHoverRadius:8
+    }]
+  },
+  options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+});
 </script>
+
 </body>
 </html>
