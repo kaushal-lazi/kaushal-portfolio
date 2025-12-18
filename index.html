@@ -6,16 +6,15 @@
 <title>Kaushal Ramajayam - Digital Marketing Portfolio</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-  /* GENERAL STYLES */
   body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     background: #0f172a;
     color: #f8fafc;
   }
-  a { color:#facc15; text-decoration:none; }
+  a { color:#38bdf8; text-decoration:none; }
 
-  /* HEADER / HERO */
+  /* HEADER */
   header {
     text-align:center;
     padding:80px 20px;
@@ -26,11 +25,11 @@
   header h1 { font-size:3rem; margin-bottom:15px; letter-spacing:2px; }
   header p { font-size:1.2rem; opacity:0.8; max-width:700px; margin:auto; line-height:1.7; }
 
-  /* ANIMATIONS */
   @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
   @keyframes grow { from {width:0;} to {width:100%;} }
+  @keyframes fadeUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
 
-  /* PROJECT CARDS */
+  /* PROJECTS */
   .projects {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -61,7 +60,17 @@
   .card h3 { margin:0 0 10px 0; color:#facc15; font-size:1.5rem; letter-spacing:1px; }
   .card p { font-size:0.95rem; opacity:0.85; line-height:1.6; }
 
-  @keyframes fadeUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
+  /* PROGRESS BARS */
+  .bar { background: rgba(255,255,255,0.08); border-radius: 30px; margin: 15px 0; overflow: hidden; }
+  .bar span {
+    display:block;
+    padding:12px 20px;
+    background: linear-gradient(90deg, #38bdf8, #c084fc);
+    font-weight:600;
+    border-radius:30px;
+    animation: grow 2s ease forwards;
+  }
+  .bar.gold span { background: linear-gradient(90deg,#facc15,#f59e0b); }
 
   /* ANALYTICS */
   #analytics {
@@ -84,19 +93,8 @@
     gap:30px;
     margin-top:40px;
   }
-  canvas { border-radius:12px; }
 
-  /* PROGRESS BARS */
-  .bar { background: rgba(255,255,255,0.08); border-radius: 30px; margin: 15px 0; overflow: hidden; }
-  .bar span {
-    display:block;
-    padding:12px 20px;
-    background: linear-gradient(90deg, #38bdf8, #c084fc);
-    font-weight:600;
-    border-radius:30px;
-    animation: grow 2s ease forwards;
-  }
-  .bar.gold span { background: linear-gradient(90deg,#facc15,#f59e0b); }
+  canvas { border-radius:12px; }
 
   /* RESPONSIVE */
   @media(max-width:700px) {
@@ -170,41 +168,48 @@
   // Overall Bar Chart
   new Chart(document.getElementById('barChart'), {
     type:'bar',
-    data:{
-      labels:['Followers','Reach','Engagement','CTR','Conversions'],
-      datasets:[{ data:[85,70,60,2.8,40], backgroundColor:['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'], borderRadius:10 }]
-    },
+    data:{ labels:['Followers','Reach','Engagement','CTR','Conversions'],
+      datasets:[{ data:[85,70,60,2.8,40], backgroundColor:['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'], borderRadius:10 }]},
     options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
   });
 
   // Overall Line Chart
   new Chart(document.getElementById('lineChart'), {
     type:'line',
-    data:{ labels:['Jan','Feb','Mar','Apr','May'], datasets:[{ data:[10,30,45,60,85], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.2)', fill:true, tension:0.4, pointRadius:6, pointHoverRadius:10 }]},
+    data:{ labels:['Jan','Feb','Mar','Apr','May'],
+      datasets:[{ data:[10,30,45,60,85], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.2)', fill:true, tension:0.4, pointRadius:6, pointHoverRadius:10 }]},
     options:{ responsive:true }
   });
 
   // Overall Pie Chart
   new Chart(document.getElementById('pieChart'), {
     type:'pie',
-    data:{ labels:['Instagram','Facebook','Website','Email'], datasets:[{ data:[45,25,20,10], backgroundColor:['#38bdf8','#c084fc','#facc15','#0ea5e9'] }]},
+    data:{ labels:['Instagram','Facebook','Website','Email'],
+      datasets:[{ data:[45,25,20,10], backgroundColor:['#38bdf8','#c084fc','#facc15','#0ea5e9'] }]},
     options:{ responsive:true }
   });
 
   // Project Growth Charts
   new Chart(document.getElementById('chartPromNight'), {
     type:'line',
-    data:{ labels:['Week1','Week2','Week3','Week4'], datasets:[{ data:[20,35,50,85], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
+    data:{ labels:['Week1','Week2','Week3','Week4'],
+      datasets:[{ data:[20,35,50,85], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
     options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
   });
 
   new Chart(document.getElementById('chartGalleryCafe'), {
     type:'line',
-    data:{ labels:['Week1','Week2','Week3','Week4'], datasets:[{ data:[15,25,40,70], borderColor:'#c084fc', backgroundColor:'rgba(192,132,252,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
+    data:{ labels:['Week1','Week2','Week3','Week4'],
+      datasets:[{ data:[15,25,40,70], borderColor:'#c084fc', backgroundColor:'rgba(192,132,252,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
     options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
   });
 
   new Chart(document.getElementById('chartGym'), {
     type:'line',
-    data:{ labels:['Week1','Week2','Week3','Week4'], datasets:[{ data:[10,25,40,60], borderColor:'#facc15', backgroundColor:'rgba(250,204,21,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
-    options:{
+    data:{ labels:['Week1','Week2','Week3','Week4'],
+      datasets:[{ data:[10,25,40,60], borderColor:'#facc15', backgroundColor:'rgba(250,204,21,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
+    options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+  });
+</script>
+</body>
+</html>
