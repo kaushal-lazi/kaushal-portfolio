@@ -232,6 +232,76 @@
     </div>
   </section>
 
+ <!-- ANALYTICS -->
+<section id="analytics">
+  <h2>Campaign Growth & Analytics</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Instagram Growth</h3>
+      <div class="bar">
+        <span style="width:85%">Followers +85%</span>
+      </div>
+      <div class="bar">
+        <span style="width:70%">Reach +70%</span>
+      </div>
+      <div class="bar">
+        <span style="width:60%">Engagement +60%</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Ad Performance</h3>
+      <div class="bar gold">
+        <span style="width:65%">CTR 2.8%</span>
+      </div>
+      <div class="bar gold">
+        <span style="width:75%">Conversions +40%</span>
+      </div>
+      <div class="bar gold">
+        <span style="width:55%">CPC Reduced</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ANALYTICS BARS */
+.bar {
+  background: rgba(255,255,255,0.08);
+  border-radius: 30px;
+  margin: 15px 0;
+  overflow: hidden;
+  height: 40px;
+  position: relative;
+}
+
+.bar span {
+  display: inline-block;
+  width: 0%; /* start from 0% */
+  height: 100%;
+  line-height: 40px;
+  color: #020617;
+  padding-left: 15px;
+  background: linear-gradient(90deg, #38bdf8, #c084fc);
+  font-weight: 600;
+  border-radius: 30px;
+  animation: grow 2s ease forwards;
+}
+
+.bar.gold span {
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+}
+
+@keyframes grow {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+</style>
+
+  
+
   <!-- CONTACT -->
   <section id="contact">
     <h2>Let’s Connect</h2>
