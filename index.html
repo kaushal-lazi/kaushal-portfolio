@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaushal Ramajayam | Digital Marketing Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-    body { background: radial-gradient(circle at top, #0f172a, #020617 60%); color:#f8fafc; }
-    header { height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; }
-    header h1 { font-size:60px; font-weight:800; background:linear-gradient(90deg, #38bdf8, #c084fc, #facc15); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: gradientMove 6s infinite linear; }
-    header p { font-size:22px; color:#cbd5f5; margin:20px 0 40px; }
-    .btn { padding:16px 42px; background:linear-gradient(135deg, #38bdf8, #c084fc); color:#020617; border-radius:50px; font-weight:700; letter-spacing:1px; box-shadow:0 25px 60px rgba(192,132,252,0.45); transition:all 0.4s ease; }
-    .btn:hover { transform:translateY(-8px) scale(1.03); box-shadow:0 40px 90px rgba(250,204,21,0.4); }
-    nav { position:sticky; top:0; background:rgba(2,6,23,0.75); backdrop-filter:blur(14px); padding:18px; text-align:center; z-index:100; }
-    nav a { margin:0 22px; color:#f8fafc; font-weight:600; position:relative; text-decoration:none; }
-    nav a::after { content:''; position:absolute; width:0; height:2px; background:linear-gradient(90deg, #38bdf8, #facc15); left:0; bottom:-6px; transition:width 0.3s; }
-    nav a:hover::after { width:100%; }
-    section { padding:120px 20px; max-width:1200px; margin:auto; }
-    section h2 { font-size:42px; margin-bottom:40px; text-align:center; font-weight:700; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px; }
-    .card { background:linear-gradient(160deg, rgba(15,23,42,0.9), rgba(2,6,23,0.9)); padding:40px; border-radius:24px; box-shadow:0 30px 80px rgba(0,0,0,0.5); transition: all 0.5s ease; position: relative; overflow:hidden; }
-    .card::before { content:''; position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(250,204,21,0.15), transparent); opacity:0; transition:opacity 0.5s; }
-    .card:hover::before { opacity:1; }
-    .card:hover { transform:translateY(-15px) scale(1.02); box-shadow:0 50px 120px rgba(56,189,248,0.25); }
-    .card h3 { color:#facc15; margin-bottom:15px; }
-    .contact-card { text-align:center; font-size:20px; letter-spacing:0.5px; }
-    footer { padding:50px; text-align:center; background:#020617; color:#94a3b8; }
-    @keyframes gradientMove { from { background-position:0%; } to { background-position:200%; } }
-    canvas { margin-top: 30px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaushal Ramajayam | Digital Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+body { background: radial-gradient(circle at top, #0f172a, #020617 60%); color:#f8fafc; }
+header { height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; }
+header h1 { font-size:60px; font-weight:800; background:linear-gradient(90deg, #38bdf8, #c084fc, #facc15); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: gradientMove 6s infinite linear; }
+header p { font-size:22px; color:#cbd5f5; margin:20px 0 40px; }
+.btn { padding:16px 42px; background:linear-gradient(135deg, #38bdf8, #c084fc); color:#020617; border-radius:50px; font-weight:700; letter-spacing:1px; box-shadow:0 25px 60px rgba(192,132,252,0.45); transition:all 0.4s ease; }
+.btn:hover { transform:translateY(-8px) scale(1.03); box-shadow:0 40px 90px rgba(250,204,21,0.4); }
+nav { position:sticky; top:0; background:rgba(2,6,23,0.75); backdrop-filter:blur(14px); padding:18px; text-align:center; z-index:100; }
+nav a { margin:0 22px; color:#f8fafc; font-weight:600; position:relative; text-decoration:none; }
+nav a::after { content:''; position:absolute; width:0; height:2px; background:linear-gradient(90deg, #38bdf8, #facc15); left:0; bottom:-6px; transition:width 0.3s; }
+nav a:hover::after { width:100%; }
+section { padding:120px 20px; max-width:1200px; margin:auto; }
+section h2 { font-size:42px; margin-bottom:40px; text-align:center; font-weight:700; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px; }
+.card { background:linear-gradient(160deg, rgba(15,23,42,0.9), rgba(2,6,23,0.9)); padding:40px; border-radius:24px; box-shadow:0 30px 80px rgba(0,0,0,0.5); transition: all 0.5s ease; position: relative; overflow:hidden; }
+.card::before { content:''; position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(250,204,21,0.15), transparent); opacity:0; transition:opacity 0.5s; }
+.card:hover::before { opacity:1; }
+.card:hover { transform:translateY(-15px) scale(1.02); box-shadow:0 50px 120px rgba(56,189,248,0.25); }
+.card h3 { color:#facc15; margin-bottom:15px; }
+.contact-card { text-align:center; font-size:20px; letter-spacing:0.5px; }
+footer { padding:50px; text-align:center; background:#020617; color:#94a3b8; }
+@keyframes gradientMove { from { background-position:0%; } to { background-position:200%; } }
+canvas { margin-top: 30px; }
+</style>
 </head>
 <body>
-
 <header>
   <div>
     <h1>Kaushal Ramajayam</h1>
@@ -41,7 +39,6 @@
     <a href="#contact" class="btn">Build With Me</a>
   </div>
 </header>
-
 <nav>
   <a href="#about">About</a>
   <a href="#skills">Expertise</a>
@@ -49,14 +46,12 @@
   <a href="#analytics">Analytics</a>
   <a href="#contact">Contact</a>
 </nav>
-
 <section id="about">
   <h2>About Me</h2>
   <p style="text-align:center; max-width:850px; margin:auto; color:#e5e7eb; font-size:18px;">
     I craft digital strategies and marketing experiences with measurable impact and strong creative vision.
   </p>
 </section>
-
 <section id="skills">
   <h2>Expertise</h2>
   <div class="grid">
@@ -68,32 +63,22 @@
     <div class="card">Marketing Funnels</div>
   </div>
 </section>
-
 <section id="projects">
   <h2>Selected Work</h2>
   <div class="grid">
-    <div class="card">
-      <h3>ICBT Prom Night</h3>
-      <p>Executed Instagram promotions with high engagement.</p>
-    </div>
-    <div class="card">
-      <h3>The Gallery Café</h3>
-      <p>Digital promotions and audience engagement strategy.</p>
-    </div>
-    <div class="card">
-      <h3>Gym Management Concept</h3>
-      <p>A premium digital wellness concept.</p>
-    </div>
+    <div class="card"><h3>ICBT Prom Night</h3><p>Executed Instagram promotions with high engagement.</p></div>
+    <div class="card"><h3>The Gallery Café</h3><p>Digital promotions and audience engagement strategy.</p></div>
+    <div class="card"><h3>Gym Management Concept</h3><p>A premium digital wellness concept.</p></div>
   </div>
 </section>
-
 <section id="analytics">
   <h2>Campaign Growth & Analytics</h2>
   <div style="max-width:850px; margin:auto;">
-    <canvas id="analyticsChart"></canvas>
+    <canvas id="barChart"></canvas>
+    <canvas id="lineChart"></canvas>
+    <canvas id="pieChart"></canvas>
   </div>
 </section>
-
 <section id="contact">
   <h2>Let’s Connect</h2>
   <div class="card contact-card">
@@ -102,34 +87,53 @@
     <p>🔗 linkedin.com/in/kaushal-ramajayam-6008772a0</p>
   </div>
 </section>
-
 <footer>© 2025 Kaushal Ramajayam · Digital Marketing Portfolio</footer>
-
-<!-- Chart.js Library -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx = document.getElementById('analyticsChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Followers', 'Reach', 'Engagement', 'CTR', 'Conversions'],
-      datasets: [{
-        label: 'Performance Metrics',
-        data: [85, 70, 60, 2.8, 40],
-        backgroundColor: [
-          '#38bdf8', '#38bdf8', '#38bdf8',
-          '#facc15', '#facc15'
-        ],
-        borderRadius: 10
-      }]
-    },
-    options: {
-      scales: {
-        y: { beginAtZero: true }
-      }
-    }
-  });
+const barCtx = document.getElementById('barChart').getContext('2d');
+new Chart(barCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Followers', 'Reach', 'Engagement', 'CTR', 'Conversions'],
+    datasets: [{
+      label: 'Metrics',
+      data: [85,70,60,2.8,40],
+      backgroundColor: ['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'],
+      borderRadius: 10
+    }]
+  },
+  options: { responsive:true, plugins:{legend:{display:false}} }
+});
+const lineCtx = document.getElementById('lineChart').getContext('2d');
+new Chart(lineCtx, {
+  type: 'line',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May'],
+    datasets: [{
+      label:'Follower Growth',
+      data:[10,30,45,60,85],
+      borderColor:'#38bdf8',
+      backgroundColor:'rgba(56,189,248,0.2)',
+      tension:0.4,
+      fill:true,
+      pointRadius:6,
+      pointHoverRadius:10
+    }]
+  },
+  options:{ responsive:true }
+});
+const pieCtx = document.getElementById('pieChart').getContext('2d');
+new Chart(pieCtx, {
+  type: 'pie',
+  data: {
+    labels:['Instagram','Facebook','Website','Email'],
+    datasets:[{
+      data:[45,25,20,10],
+      backgroundColor:['#38bdf8','#c084fc','#facc15','#0ea5e9']
+    }]
+  },
+  options:{ responsive:true }
+});
 </script>
-
 </body>
 </html>
