@@ -3,76 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaushal Ramajayam - Digital Marketing Portfolio</title>
+<title>Kaushal Ramajayam - Portfolio</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-/* GENERAL STYLES */
+/* GLOBAL STYLES */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #0f172a;
-  color: #f8fafc;
-  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: #0b0c10;
+  color: #f5f5f5;
 }
-a { text-decoration: none; color:#38bdf8; }
-section { padding:50px 20px; }
+a { text-decoration:none; color:#facc15; }
+section { padding:60px 20px; }
 
 /* HEADER */
 header {
-  text-align: center;
-  background: linear-gradient(90deg, #38bdf8, #c084fc);
-  color: #020617;
-  padding: 80px 20px;
-  animation: fadeIn 1.5s ease;
-}
-header h1 { font-size:3rem; margin-bottom:15px; }
-header p { font-size:1.2rem; max-width:700px; margin:auto; line-height:1.6; }
-
-/* ABOUT ME */
-.about {
   text-align:center;
-  max-width:900px;
-  margin:50px auto;
-  animation: fadeIn 2s ease;
+  padding:100px 20px;
+  background: linear-gradient(135deg,#1f2937,#111827);
 }
-.about p { font-size:1rem; opacity:0.85; line-height:1.6; }
+header h1 { font-size:3rem; margin-bottom:15px; color:#facc15; letter-spacing:2px; }
+header p { font-size:1.2rem; opacity:0.85; max-width:700px; margin:auto; line-height:1.7; }
+
+/* ABOUT */
+.about {
+  max-width:850px;
+  margin:50px auto;
+  text-align:center;
+}
+.about p { font-size:1rem; line-height:1.8; opacity:0.8; }
 
 /* PROJECT CARDS */
 .projects {
   display:flex;
   flex-direction:column;
-  gap:50px;
+  gap:60px;
   max-width:1000px;
   margin:auto;
 }
 .project-card {
-  background:#1e293b;
-  border-radius:15px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  opacity:0;
-  transform: translateY(50px);
-  animation: fadeUp 1s forwards;
+  background: #1c1e22;
+  border-radius:20px;
+  padding:40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  overflow:hidden;
 }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.8); }
+.project-card img {
+  width:100px; float:left; margin-right:25px; border-radius:15px; transition: transform 0.3s ease;
+}
+.project-card img:hover { transform: scale(1.05); }
+.project-card h3 { color:#facc15; margin-top:0; font-size:1.7rem; letter-spacing:1px; }
+.project-card p { margin-top:5px; opacity:0.85; line-height:1.6; font-size:0.95rem; }
+.project-card canvas { margin-top:25px; clear:both; border-radius:12px; background:#0b0c10; }
+
+/* ANIMATIONS */
+.project-card { opacity:0; transform: translateY(50px); animation: fadeUp 1s forwards; }
 .project-card:nth-child(1) { animation-delay:0.3s; }
 .project-card:nth-child(2) { animation-delay:0.6s; }
 .project-card:nth-child(3) { animation-delay:0.9s; }
-
-.project-card:hover { transform: translateY(-10px); box-shadow:0 15px 40px rgba(0,0,0,0.6); }
-.project-card img { width:90px; float:left; margin-right:25px; border-radius:12px; transition: transform 0.3s ease; }
-.project-card img:hover { transform: scale(1.1); }
-.project-card h3 { color:#facc15; margin-top:0; font-size:1.5rem; }
-.project-card p { opacity:0.85; line-height:1.6; margin-top:5px; font-size:0.95rem; }
-.project-card canvas { margin-top:20px; clear:both; border-radius:10px; background:#0f172a; }
-
-/* ANIMATIONS */
-@keyframes fadeIn { from {opacity:0} to {opacity:1} }
 @keyframes fadeUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
 
 /* RESPONSIVE */
-@media (max-width:600px){
-  .project-card img { float:none; display:block; margin:auto 0 20px; width:70px; }
+@media(max-width:700px) {
+  .project-card img { float:none; display:block; margin:auto 0 20px; width:80px; }
 }
 </style>
 </head>
@@ -81,12 +76,12 @@ header p { font-size:1.2rem; max-width:700px; margin:auto; line-height:1.6; }
 <!-- HEADER -->
 <header>
   <h1>Kaushal Ramajayam</h1>
-  <p>Digital Marketing & System Analysis Professional.<br>I specialize in managing digital campaigns, analyzing data, and delivering measurable results with a professional and creative approach.</p>
+  <p>Luxury Digital Marketing & System Analysis Portfolio.<br>Creative campaigns, measurable growth, and data-driven insights with a bold and professional approach.</p>
 </header>
 
 <!-- ABOUT -->
 <section class="about">
-  <p>Hello! I am Kaushal, a passionate digital marketer and system analyst. My work focuses on creating engaging social media campaigns, implementing digital solutions, analyzing data, and optimizing project growth. Below are some of my key projects showcasing the strategies, execution, and results.</p>
+  <p>Hello! I am Kaushal, a digital marketing and system analysis professional. I specialize in creating premium campaigns, analyzing project metrics, and delivering measurable results. My work combines creativity with data-driven strategy, ensuring every project achieves its goals efficiently and elegantly.</p>
 </section>
 
 <!-- PROJECTS -->
@@ -94,30 +89,30 @@ header p { font-size:1.2rem; max-width:700px; margin:auto; line-height:1.6; }
 
   <!-- Project 1 -->
   <div class="project-card">
-    <img src="https://via.placeholder.com/90x90?text=App" alt="ICBT Prom Night">
+    <img src="https://via.placeholder.com/100?text=App" alt="ICBT Prom Night">
     <h3>ICBT Prom Night</h3>
-    <p><strong>About:</strong> Managed the full social media campaign for the annual prom night, including content creation, Instagram reels, story engagement, and ticket promotions.</p>
-    <p><strong>Execution:</strong> Scheduled posts for optimal timing, designed interactive stories, ran targeted ads, and monitored engagement analytics daily.</p>
+    <p><strong>About:</strong> Managed the full digital marketing campaign for the annual prom night including social media content, stories, reels, and ticket promotions.</p>
+    <p><strong>Execution:</strong> Scheduled posts, designed interactive stories, ran targeted ads, and monitored engagement analytics daily.</p>
     <p><strong>Results:</strong> Engagement reached 85%, reach 70%, CTR 2.8%.</p>
     <canvas id="chartPromNight" style="height:200px;"></canvas>
   </div>
 
   <!-- Project 2 -->
   <div class="project-card">
-    <img src="https://via.placeholder.com/90x90?text=App" alt="Gallery Café">
+    <img src="https://via.placeholder.com/100?text=App" alt="Gallery Café">
     <h3>The Gallery Café</h3>
-    <p><strong>About:</strong> Developed and promoted the café’s online pre-order system, focused on increasing brand awareness and customer engagement through creative social media campaigns.</p>
-    <p><strong>Execution:</strong> Created visually appealing posts, ran Facebook & Instagram ads targeting local customers, monitored clicks and engagement, and optimized campaigns weekly.</p>
-    <p><strong>Results:</strong> Reach increased to 70%, engagement 60%, new orders up 25%.</p>
+    <p><strong>About:</strong> Developed and promoted the café’s online pre-order system. Increased brand awareness and customer engagement through creative social media campaigns.</p>
+    <p><strong>Execution:</strong> Designed posts and stories, ran Facebook & Instagram ads, monitored engagement, and optimized campaigns weekly.</p>
+    <p><strong>Results:</strong> Reach increased 70%, engagement 60%, new orders up 25%.</p>
     <canvas id="chartGalleryCafe" style="height:200px;"></canvas>
   </div>
 
   <!-- Project 3 -->
   <div class="project-card">
-    <img src="https://via.placeholder.com/90x90?text=App" alt="Gym Management">
+    <img src="https://via.placeholder.com/100?text=App" alt="Gym Management">
     <h3>Gym Management Concept</h3>
     <p><strong>About:</strong> Marketing strategies for a gym management system to improve subscriptions and social media engagement.</p>
-    <p><strong>Execution:</strong> Designed content for posts, newsletters, and ads; analyzed engagement and optimized campaigns weekly.</p>
+    <p><strong>Execution:</strong> Created content, newsletters, and targeted ads. Analyzed engagement and optimized campaigns weekly.</p>
     <p><strong>Results:</strong> Subscription growth 60%, engagement improved, retention up 15%.</p>
     <canvas id="chartGym" style="height:200px;"></canvas>
   </div>
@@ -126,24 +121,24 @@ header p { font-size:1.2rem; max-width:700px; margin:auto; line-height:1.6; }
 
 <!-- CHARTS -->
 <script>
-// Project 1 Chart - Bar
+// Project 1 Bar Chart
 new Chart(document.getElementById('chartPromNight'), {
   type:'bar',
-  data:{ labels:['Followers','Reach','Engagement','CTR'], datasets:[{ data:[85,70,60,2.8], backgroundColor:['#38bdf8','#3b82f6','#38bdf8','#facc15'], borderRadius:5 }]},
+  data:{ labels:['Followers','Reach','Engagement','CTR'], datasets:[{ data:[85,70,60,2.8], backgroundColor:['#facc15','#fbbf24','#f59e0b','#fbbf24'], borderRadius:5 }]},
   options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
 });
 
-// Project 2 Chart - Line
+// Project 2 Line Chart
 new Chart(document.getElementById('chartGalleryCafe'), {
   type:'line',
-  data:{ labels:['Week1','Week2','Week3','Week4'], datasets:[{ data:[15,25,40,70], borderColor:'#c084fc', backgroundColor:'rgba(192,132,252,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
+  data:{ labels:['Week1','Week2','Week3','Week4'], datasets:[{ data:[15,25,40,70], borderColor:'#facc15', backgroundColor:'rgba(250,204,21,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
   options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
 });
 
-// Project 3 Chart - Pie
+// Project 3 Pie Chart
 new Chart(document.getElementById('chartGym'), {
   type:'pie',
-  data:{ labels:['Subscribers','Non-subscribers'], datasets:[{ data:[60,40], backgroundColor:['#facc15','#0ea5e9'] }]},
+  data:{ labels:['Subscribers','Non-subscribers'], datasets:[{ data:[60,40], backgroundColor:['#facc15','#1e293b'] }]},
   options:{ responsive:true, plugins:{legend:{position:'bottom'}} }
 });
 </script>
