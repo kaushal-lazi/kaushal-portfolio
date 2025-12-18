@@ -1,133 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaushal Ramajayam - Digital Marketing Portfolio</title>
+<section id="analytics">
+  <div style="max-width:900px; margin:auto; padding:40px 20px;">
+
+    <!-- Overall Analytics -->
+    <h2 style="text-align:center; margin-bottom:30px;">Overall Campaign Analytics</h2>
+
+    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:30px;">
+      <h3 style="color:#facc15; text-align:center;">Overall Metrics - Bar Chart</h3>
+      <canvas id="barChart" style="height:250px;"></canvas>
+    </div>
+
+    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:30px;">
+      <h3 style="color:#facc15; text-align:center;">Follower Growth - Line Chart</h3>
+      <canvas id="lineChart" style="height:250px;"></canvas>
+    </div>
+
+    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:50px;">
+      <h3 style="color:#facc15; text-align:center;">Channel Distribution - Pie Chart</h3>
+      <canvas id="pieChart" style="height:250px;"></canvas>
+    </div>
+
+    <!-- Project Growth -->
+    <h2 style="text-align:center; margin-bottom:30px;">Project Growth</h2>
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
+
+      <div style="background:#1e293b; padding:20px; border-radius:15px;">
+        <h3 style="text-align:center; margin-bottom:15px;">ICBT Prom Night</h3>
+        <canvas id="chartPromNight" style="height:200px;"></canvas>
+      </div>
+
+      <div style="background:#1e293b; padding:20px; border-radius:15px;">
+        <h3 style="text-align:center; margin-bottom:15px;">The Gallery Café</h3>
+        <canvas id="chartGalleryCafe" style="height:200px;"></canvas>
+      </div>
+
+      <div style="background:#1e293b; padding:20px; border-radius:15px;">
+        <h3 style="text-align:center; margin-bottom:15px;">Gym Management Concept</h3>
+        <canvas id="chartGym" style="height:200px;"></canvas>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  background: #0f172a;
-  color: #f8fafc;
-}
-a { color:#38bdf8; text-decoration:none; }
-
-/* HEADER / HERO */
-header {
-  text-align:center;
-  padding:60px 20px;
-  background: linear-gradient(90deg,#38bdf8,#c084fc);
-  color:#020617;
-}
-header h1 { font-size:2.8rem; margin-bottom:15px; }
-header p { font-size:1.2rem; opacity:0.9; max-width:700px; margin:auto; }
-
-/* ABOUT ME */
-.about {
-  text-align:center;
-  padding:40px 20px;
-}
-.about p { max-width:800px; margin:auto; line-height:1.6; opacity:0.85; font-size:1rem; }
-
-/* PROJECTS */
-.projects { display:flex; flex-direction:column; gap:50px; padding:20px; max-width:1000px; margin:auto; }
-.project-card {
-  background:#1e293b;
-  border-radius:15px;
-  padding:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
-}
-.project-card:hover { transform: translateY(-5px); }
-.project-card img {
-  width:80px;
-  float:left;
-  margin-right:20px;
-  border-radius:10px;
-}
-.project-card h3 { color:#facc15; margin-top:0; }
-.project-card p { opacity:0.85; line-height:1.6; margin-top:0; }
-.project-card canvas { margin-top:20px; clear:both; border-radius:10px; background:#0f172a; }
-
-/* RESPONSIVE */
-@media (max-width:600px){
-  .project-card img { float:none; display:block; margin:auto 0 15px; width:70px; }
-}
-</style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header>
-  <h1>Kaushal Ramajayam</h1>
-  <p>Digital Marketing & System Analysis Professional.<br>I specialize in creating campaigns, managing digital projects, analyzing data, and driving measurable results. Welcome to my professional portfolio showcasing my work and achievements.</p>
-</header>
-
-<!-- ABOUT -->
-<section class="about">
-  <p>Hello! I am Kaushal, a digital marketer and system analyst with experience in social media campaigns, website promotions, mobile app analytics, and project management. My work focuses on delivering professional, bold, and creative solutions that drive real results. Here are some of my key projects and their outcomes.</p>
-</section>
-
-<!-- PROJECTS -->
-<section class="projects">
-
-  <!-- Project 1 -->
-  <div class="project-card">
-    <img src="https://via.placeholder.com/80x80?text=App" alt="ICBT Prom Night">
-    <h3>ICBT Prom Night</h3>
-    <p><strong>About:</strong> Managed the complete digital marketing campaign for the ICBT annual prom night. This included content creation, Instagram reels, story engagement, and ticket promotions. My goal was to increase student participation and engagement.</p>
-    <p><strong>Execution:</strong> Planned posts with optimal timing, created interactive stories, ran social media ads targeting students, and monitored engagement analytics daily.</p>
-    <p><strong>Results:</strong> Engagement increased to 85%, reach expanded by 70%, and CTR improved to 2.8%.</p>
-    <canvas id="chartPromNight" style="height:200px;"></canvas>
-  </div>
-
-  <!-- Project 2 -->
-  <div class="project-card">
-    <img src="https://via.placeholder.com/80x80?text=App" alt="Gallery Café">
-    <h3>The Gallery Café</h3>
-    <p><strong>About:</strong> Developed and promoted the café's online pre-order system. Focused on increasing brand awareness and customer engagement through social media campaigns.</p>
-    <p><strong>Execution:</strong> Created visually appealing posts and stories, ran Facebook and Instagram ads targeting local customers, monitored clicks and interactions, and optimized campaigns weekly.</p>
-    <p><strong>Results:</strong> Reach improved to 70%, engagement rose to 60%, and new orders increased by 25%.</p>
-    <canvas id="chartGalleryCafe" style="height:200px;"></canvas>
-  </div>
-
-  <!-- Project 3 -->
-  <div class="project-card">
-    <img src="https://via.placeholder.com/80x80?text=App" alt="Gym Management">
-    <h3>Gym Management Concept</h3>
-    <p><strong>About:</strong> Created marketing strategies for a gym management system to improve subscriptions and social media engagement.</p>
-    <p><strong>Execution:</strong> Designed content for social media, newsletters, and targeted ads. Analyzed user engagement and optimized campaigns weekly.</p>
-    <p><strong>Results:</strong> Subscription growth reached 60%, engagement improved, and retention increased by 15%.</p>
-    <canvas id="chartGym" style="height:200px;"></canvas>
-  </div>
-
-</section>
-
-<!-- CHARTS -->
 <script>
-// Project 1 Chart
+// Overall Analytics
+new Chart(document.getElementById('barChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Followers','Reach','Engagement','CTR','Conversions'],
+    datasets: [{
+      label: 'Metrics',
+      data: [85,70,60,2.8,40],
+      backgroundColor: ['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'],
+      borderRadius: 10
+    }]
+  },
+  options: { responsive:true, plugins:{legend:{display:false}} }
+});
+
+new Chart(document.getElementById('lineChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May'],
+    datasets: [{
+      label: 'Follower Growth',
+      data: [10,30,45,60,85],
+      borderColor: '#38bdf8',
+      backgroundColor: 'rgba(56,189,248,0.2)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 6,
+      pointHoverRadius: 10
+    }]
+  },
+  options: { responsive:true }
+});
+
+new Chart(document.getElementById('pieChart'), {
+  type: 'pie',
+  data: {
+    labels: ['Instagram','Facebook','Website','Email'],
+    datasets: [{
+      data: [45,25,20,10],
+      backgroundColor: ['#38bdf8','#c084fc','#facc15','#0ea5e9']
+    }]
+  },
+  options: { responsive:true }
+});
+
+// Project Growth Charts
 new Chart(document.getElementById('chartPromNight'), {
-  type:'bar',
-  data:{ labels:['Followers','Reach','Engagement','CTR'], datasets:[{ data:[85,70,60,2.8], backgroundColor:['#38bdf8','#3b82f6','#38bdf8','#facc15'], borderRadius:5 }]},
+  type: 'line',
+  data: {
+    labels: ['Week1','Week2','Week3','Week4'],
+    datasets:[{
+      label: 'Engagement',
+      data: [20,35,50,85],
+      borderColor:'#38bdf8',
+      backgroundColor:'rgba(56,189,248,0.3)',
+      fill:true,
+      tension:0.4,
+      pointRadius:5,
+      pointHoverRadius:8
+    }]
+  },
   options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
 });
 
-// Project 2 Chart
 new Chart(document.getElementById('chartGalleryCafe'), {
-  type:'line',
-  data:{ labels:['Week1','Week2','Week3','Week4'], datasets:[{ data:[15,25,40,70], borderColor:'#c084fc', backgroundColor:'rgba(192,132,252,0.3)', fill:true, tension:0.4, pointRadius:5, pointHoverRadius:8 }]},
+  type: 'line',
+  data: {
+    labels: ['Week1','Week2','Week3','Week4'],
+    datasets:[{
+      label: 'Reach',
+      data: [15,25,40,70],
+      borderColor:'#c084fc',
+      backgroundColor:'rgba(192,132,252,0.3)',
+      fill:true,
+      tension:0.4,
+      pointRadius:5,
+      pointHoverRadius:8
+    }]
+  },
   options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
 });
 
-// Project 3 Chart
 new Chart(document.getElementById('chartGym'), {
-  type:'pie',
-  data:{ labels:['Subscribers','Non-subscribers'], datasets:[{ data:[60,40], backgroundColor:['#facc15','#0ea5e9'] }]},
-  options:{ responsive:true, plugins:{legend:{position:'bottom'}} }
+  type: 'line',
+  data: {
+    labels: ['Week1','Week2','Week3','Week4'],
+    datasets:[{
+      label: 'Subscription',
+      data: [10,25,40,60],
+      borderColor:'#facc15',
+      backgroundColor:'rgba(250,204,21,0.3)',
+      fill:true,
+      tension:0.4,
+      pointRadius:5,
+      pointHoverRadius:8
+    }]
+  },
+  options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
 });
 </script>
-
-</body>
-</html>
