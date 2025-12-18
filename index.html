@@ -98,37 +98,51 @@
 <!-- ANALYTICS SECTION -->
 <section id="analytics">
   <div style="max-width:900px; margin:auto; padding:40px 20px;">
+
+    <!-- Overall Analytics -->
     <h2 style="text-align:center; margin-bottom:30px;">Overall Campaign Analytics</h2>
+
     <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:30px;">
-      <canvas id="barChart"></canvas>
-    </div>
-    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:30px;">
-      <canvas id="lineChart"></canvas>
-    </div>
-    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:50px;">
-      <canvas id="pieChart"></canvas>
+      <h3 style="color:#facc15; text-align:center;">Overall Metrics - Bar Chart</h3>
+      <canvas id="barChart" style="height:250px;"></canvas>
     </div>
 
+    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:30px;">
+      <h3 style="color:#facc15; text-align:center;">Follower Growth - Line Chart</h3>
+      <canvas id="lineChart" style="height:250px;"></canvas>
+    </div>
+
+    <div style="background:#1e293b; padding:20px; border-radius:15px; margin-bottom:50px;">
+      <h3 style="color:#facc15; text-align:center;">Channel Distribution - Pie Chart</h3>
+      <canvas id="pieChart" style="height:250px;"></canvas>
+    </div>
+
+    <!-- Project Growth -->
     <h2 style="text-align:center; margin-bottom:30px;">Project Growth</h2>
-    <div class="grid">
-      <div class="card">
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
+
+      <div style="background:#1e293b; padding:20px; border-radius:15px;">
         <h3 style="text-align:center; margin-bottom:15px;">ICBT Prom Night</h3>
-        <canvas id="chartPromNight" style="height:150px;"></canvas>
+        <canvas id="chartPromNight" style="height:200px;"></canvas>
       </div>
-      <div class="card">
+
+      <div style="background:#1e293b; padding:20px; border-radius:15px;">
         <h3 style="text-align:center; margin-bottom:15px;">The Gallery Café</h3>
-        <canvas id="chartGalleryCafe" style="height:150px;"></canvas>
+        <canvas id="chartGalleryCafe" style="height:200px;"></canvas>
       </div>
-      <div class="card">
+
+      <div style="background:#1e293b; padding:20px; border-radius:15px;">
         <h3 style="text-align:center; margin-bottom:15px;">Gym Management Concept</h3>
-        <canvas id="chartGym" style="height:150px;"></canvas>
+        <canvas id="chartGym" style="height:200px;"></canvas>
       </div>
+
     </div>
   </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-// === Overall Analytics Charts ===
+// Overall Analytics
 new Chart(document.getElementById('barChart'), {
   type: 'bar',
   data: {
@@ -173,13 +187,13 @@ new Chart(document.getElementById('pieChart'), {
   options: { responsive:true }
 });
 
-// === Individual Project Charts ===
+// Project Growth Charts
 new Chart(document.getElementById('chartPromNight'), {
   type: 'line',
   data: {
     labels: ['Week1','Week2','Week3','Week4'],
     datasets:[{
-      label: 'Engagement Growth',
+      label: 'Engagement',
       data: [20,35,50,85],
       borderColor:'#38bdf8',
       backgroundColor:'rgba(56,189,248,0.3)',
@@ -197,7 +211,7 @@ new Chart(document.getElementById('chartGalleryCafe'), {
   data: {
     labels: ['Week1','Week2','Week3','Week4'],
     datasets:[{
-      label: 'Reach Growth',
+      label: 'Reach',
       data: [15,25,40,70],
       borderColor:'#c084fc',
       backgroundColor:'rgba(192,132,252,0.3)',
@@ -215,7 +229,7 @@ new Chart(document.getElementById('chartGym'), {
   data: {
     labels: ['Week1','Week2','Week3','Week4'],
     datasets:[{
-      label: 'Subscription Growth',
+      label: 'Subscription',
       data: [10,25,40,60],
       borderColor:'#facc15',
       backgroundColor:'rgba(250,204,21,0.3)',
@@ -228,6 +242,7 @@ new Chart(document.getElementById('chartGym'), {
   options:{ responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
 });
 </script>
+
 
 </body>
 </html>
