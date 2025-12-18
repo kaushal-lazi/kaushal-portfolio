@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kaushal Ramajayam | Digital Marketing Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
     body { background: radial-gradient(circle at top, #0f172a, #020617 60%); color:#f8fafc; }
@@ -14,7 +15,7 @@
     .btn { padding:16px 42px; background:linear-gradient(135deg, #38bdf8, #c084fc); color:#020617; border-radius:50px; font-weight:700; letter-spacing:1px; box-shadow:0 25px 60px rgba(192,132,252,0.45); transition:all 0.4s ease; }
     .btn:hover { transform:translateY(-8px) scale(1.03); box-shadow:0 40px 90px rgba(250,204,21,0.4); }
     nav { position:sticky; top:0; background:rgba(2,6,23,0.75); backdrop-filter:blur(14px); padding:18px; text-align:center; z-index:100; }
-    nav a { margin:0 22px; color:#f8fafc; font-weight:600; position:relative; }
+    nav a { margin:0 22px; color:#f8fafc; font-weight:600; position:relative; text-decoration:none; }
     nav a::after { content:''; position:absolute; width:0; height:2px; background:linear-gradient(90deg, #38bdf8, #facc15); left:0; bottom:-6px; transition:width 0.3s; }
     nav a:hover::after { width:100%; }
     section { padding:120px 20px; max-width:1200px; margin:auto; }
@@ -28,6 +29,7 @@
     .contact-card { text-align:center; font-size:20px; letter-spacing:0.5px; }
     footer { padding:50px; text-align:center; background:#020617; color:#94a3b8; }
     @keyframes gradientMove { from { background-position:0%; } to { background-position:200%; } }
+    canvas { margin-top: 30px; }
   </style>
 </head>
 <body>
@@ -51,19 +53,19 @@
 <section id="about">
   <h2>About Me</h2>
   <p style="text-align:center; max-width:850px; margin:auto; color:#e5e7eb; font-size:18px;">
-    I craft bold digital experiences and marketing strategies that connect brands with people. My work blends creativity, analytics, and luxury-level presentation to deliver measurable impact.
+    I craft digital strategies and marketing experiences with measurable impact and strong creative vision.
   </p>
 </section>
 
 <section id="skills">
   <h2>Expertise</h2>
   <div class="grid">
-    <div class="card">High-Impact Social Media Campaigns</div>
-    <div class="card">Luxury Brand Positioning</div>
-    <div class="card">Instagram & Meta Advertising</div>
-    <div class="card">SEO & Performance Tracking</div>
-    <div class="card">Content Strategy & Copywriting</div>
-    <div class="card">Website & Funnel Planning</div>
+    <div class="card">Social Media Campaigns</div>
+    <div class="card">Brand Positioning</div>
+    <div class="card">Instagram & Meta Ads</div>
+    <div class="card">SEO & Analytics</div>
+    <div class="card">Content Strategy</div>
+    <div class="card">Marketing Funnels</div>
   </div>
 </section>
 
@@ -72,24 +74,23 @@
   <div class="grid">
     <div class="card">
       <h3>ICBT Prom Night</h3>
-      <p>High-engagement Instagram campaign with urgency-based storytelling.</p>
+      <p>Executed Instagram promotions with high engagement.</p>
     </div>
     <div class="card">
       <h3>The Gallery Café</h3>
-      <p>Digital promotions and customer engagement strategy.</p>
+      <p>Digital promotions and audience engagement strategy.</p>
     </div>
     <div class="card">
       <h3>Gym Management Concept</h3>
-      <p>Premium digital ecosystem for wellness & automation.</p>
+      <p>A premium digital wellness concept.</p>
     </div>
   </div>
 </section>
 
-<!-- ANALYTICS WITH CHART.JS -->
 <section id="analytics">
   <h2>Campaign Growth & Analytics</h2>
-  <div style="max-width:900px; margin:auto;">
-    <canvas id="campaignChart"></canvas>
+  <div style="max-width:850px; margin:auto;">
+    <canvas id="analyticsChart"></canvas>
   </div>
 </section>
 
@@ -102,40 +103,32 @@
   </div>
 </section>
 
-<footer>
-  © 2025 Kaushal Ramajayam · Digital Marketing Portfolio
-</footer>
+<footer>© 2025 Kaushal Ramajayam · Digital Marketing Portfolio</footer>
 
-<!-- CHART.JS -->
+<!-- Chart.js Library -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-const ctx = document.getElementById('campaignChart').getContext('2d');
-const campaignChart = new Chart(ctx, {
+  const ctx = document.getElementById('analyticsChart').getContext('2d');
+  new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Followers', 'Reach', 'Engagement', 'CTR', 'Conversions'],
-        datasets: [{
-            label: 'Performance Metrics',
-            data: [85, 70, 60, 2.8, 40],
-            backgroundColor: ['#38bdf8','#38bdf8','#38bdf8','#facc15','#facc15'],
-            borderRadius: 10
-        }]
+      labels: ['Followers', 'Reach', 'Engagement', 'CTR', 'Conversions'],
+      datasets: [{
+        label: 'Performance Metrics',
+        data: [85, 70, 60, 2.8, 40],
+        backgroundColor: [
+          '#38bdf8', '#38bdf8', '#38bdf8',
+          '#facc15', '#facc15'
+        ],
+        borderRadius: 10
+      }]
     },
     options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false },
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        return context.dataset.data[context.dataIndex] + (context.dataIndex < 3 ? '%' : '%');
-                    }
-                }
-            }
-        },
-        scales: { y: { beginAtZero: true } }
+      scales: {
+        y: { beginAtZero: true }
+      }
     }
-});
+  });
 </script>
 
 </body>
