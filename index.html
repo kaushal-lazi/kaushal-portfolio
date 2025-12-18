@@ -300,6 +300,55 @@
 }
 </style>
 
+  <!-- ANALYTICS WITH GRAPHS -->
+<section id="analytics">
+  <h2>Campaign Growth & Analytics</h2>
+  <div style="max-width:900px; margin:auto;">
+    <canvas id="campaignChart"></canvas>
+  </div>
+</section>
+
+<!-- CHART.JS LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('campaignChart').getContext('2d');
+const campaignChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Followers', 'Reach', 'Engagement', 'CTR', 'Conversions'],
+        datasets: [{
+            label: 'Performance Metrics',
+            data: [85, 70, 60, 2.8, 40],
+            backgroundColor: [
+                '#38bdf8',
+                '#38bdf8',
+                '#38bdf8',
+                '#facc15',
+                '#facc15'
+            ],
+            borderRadius: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.dataset.data[context.dataIndex] + (context.dataIndex < 3 ? '%' : context.dataIndex == 3 ? '%' : '%');
+                    }
+                }
+            }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+</script>
+
+
   
 
   <!-- CONTACT -->
